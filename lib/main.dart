@@ -1,3 +1,4 @@
+import 'package:flipkart/Language.dart';
 import 'package:flipkart/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flipkart',
       home: SplashScreen(),
-      routes: {},
+      routes: {"/languagePage": (context) => Language()},
     );
   }
 }
