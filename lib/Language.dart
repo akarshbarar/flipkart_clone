@@ -49,7 +49,9 @@ class _LanguageState extends State<Language> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                   child: MaterialButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed("/login");
+                    },
                     color: lang.length == 0 ? Colors.grey : Colors.orange,
                     child: Text(
                       "CONTINUE",
