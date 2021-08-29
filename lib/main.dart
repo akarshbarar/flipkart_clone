@@ -1,5 +1,6 @@
 import 'package:flipkart/Language.dart';
 import 'package:flipkart/SplashScreen.dart';
+import 'package:flipkart/home.dart';
 import 'package:flipkart/login.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       home: SplashScreen(),
       routes: {
         "/languagePage": (context) => Language(),
-        "/login": (context) => Login()
+        "/login": (context) => Login(),
+        '/home': (context) => Home()
       },
     );
   }

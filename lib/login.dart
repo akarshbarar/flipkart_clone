@@ -61,7 +61,9 @@ class _LoginState extends State<Login> {
                       child: Padding(
                         padding: const EdgeInsets.only(left: 8.0, right: 8.0),
                         child: MaterialButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.of(context).pushNamed('/home');
+                          },
                           color: Colors.grey,
                           child: Text(
                             "CONTINUE",
