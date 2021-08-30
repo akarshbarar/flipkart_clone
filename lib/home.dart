@@ -1,3 +1,4 @@
+import 'package:flipkart/Pages/shop.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -10,9 +11,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   int index = 0;
   var tabs = <Widget>[
-    Center(
-      child: Text("Shop"),
-    ),
+    Shop(),
     Center(
       child: Text("Supercoin"),
     ),
@@ -58,6 +57,26 @@ class _HomeState extends State<Home> {
               label: "quick", icon: Icon(Icons.ac_unit_outlined))
         ],
       ),
+      drawer: Drawer(
+          child: Column(
+        children: [
+          ListTile(
+            tileColor: Colors.blue,
+            leading: Icon(Icons.home),
+            title: Text("Home"),
+            trailing: FlutterLogo(),
+          ),
+          ListTile(
+            leading: Icon(Icons.add),
+            title: Text("Flipkart Plis Zone"),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.ac_unit),
+            title: Text("All Categories"),
+          )
+        ],
+      )),
     ));
   }
 }
