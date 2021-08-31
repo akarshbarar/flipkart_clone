@@ -19,6 +19,7 @@ class _ShopState extends State<Shop> {
                 icon: Icon(Icons.search)),
           ),
           Expanded(
+              flex: 1,
               child: ListView.builder(
                   scrollDirection: Axis.horizontal,
                   itemCount: 100,
@@ -27,6 +28,24 @@ class _ShopState extends State<Shop> {
                       child: FlutterLogo(),
                     );
                   })),
+          Expanded(
+              flex: 9,
+              child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2),
+                  itemBuilder: (context, i) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                            color: Colors.grey,
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Column(
+                          children: [FlutterLogo(), Text("Hii")],
+                        ),
+                      ),
+                    );
+                  }))
         ],
       ),
     );
