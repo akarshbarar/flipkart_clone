@@ -1,3 +1,4 @@
+import 'package:flipkart/AllCategories.dart';
 import 'package:flipkart/Language.dart';
 import 'package:flipkart/SplashScreen.dart';
 import 'package:flipkart/home.dart';
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/languagePage": (context) => Language(),
         "/login": (context) => Login(),
-        '/home': (context) => Home()
+        '/home': (context) => Home(),
+        '/allcategories': (context) => AllCategories()
       },
     );
   }

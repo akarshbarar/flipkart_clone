@@ -72,6 +72,9 @@ class _HomeState extends State<Home> {
           ),
           Divider(),
           ListTile(
+            onTap: () {
+              Navigator.of(context).pushNamed("/allcategories");
+            },
             leading: Icon(Icons.ac_unit),
             title: Text("All Categories"),
           )
