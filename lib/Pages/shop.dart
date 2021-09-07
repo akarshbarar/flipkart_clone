@@ -1,6 +1,7 @@
 import 'dart:collection';
 import 'dart:convert';
 
+import 'package:flipkart/UTILS/model.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:http/http.dart' as http;
@@ -13,11 +14,12 @@ class Shop extends StatefulWidget {
 }
 
 class _ShopState extends State<Shop> {
-  Future<HashMap<String, String>> getData() async {
+  Future<List> getData() async {
     var data =
         await http.get(Uri.parse("http://192.168.29.14:3000/getItemList"));
-    print(data.body);
-    return json.decode(data.body);
+    print(json.decode(data.body)["data"]);
+
+    return json.decode(data.body)["data"];
   }
 
   @override
@@ -42,7 +44,7 @@ class _ShopState extends State<Shop> {
                   })),
           Expanded(
               flex: 9,
-              child: FutureBuilder<HashMap<String, String>>(
+              child: FutureBuilder<List>(
                 future: getData(),
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
@@ -56,7 +58,8 @@ class _ShopState extends State<Shop> {
                   if (snapshot.hasData) {
                     return GridView.builder(
                         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: snapshot.data!.length),
+                            crossAxisCount: 2),
+                        itemCount: snapshot.data!.length,
                         itemBuilder: (context, i) {
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
@@ -67,7 +70,7 @@ class _ShopState extends State<Shop> {
                               child: Column(
                                 children: [
                                   FlutterLogo(),
-                                  Text(snapshot.toString())
+                                  Text(snapshot.data![i]["name"].toString())
                                 ],
                               ),
                             ),
